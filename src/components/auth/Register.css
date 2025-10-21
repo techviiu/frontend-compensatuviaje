@@ -19,6 +19,32 @@
 .register-header {
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #22C55E;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.back-to-home:hover {
+  background: #F0FDF4;
+  color: #16A34A;
+  transform: translateX(-2px);
+}
+
+.back-to-home svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .register-header h1 {

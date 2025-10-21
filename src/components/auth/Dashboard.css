@@ -109,6 +109,79 @@
   font-size: 1rem;
 }
 
+/* Quick Actions */
+.quick-actions {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.quick-actions h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1F2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: #F9FAFB;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.action-card:hover {
+  border-color: #22C55E;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.2);
+}
+
+.action-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.action-icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.action-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1F2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.action-card p {
+  margin: 0;
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

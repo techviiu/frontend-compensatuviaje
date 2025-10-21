@@ -1,8 +1,36 @@
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const USE_MOCK = true; // Cambiar a false cuando el backend esté disponible
 
 class AuthService {
   // Login de usuario
   async login(email, password) {
+    // MODO MOCK - Sin backend
+    if (USE_MOCK) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const mockUser = {
+            id: '123',
+            email: email,
+            firstName: 'Usuario',
+            lastName: 'Demo',
+            role: 'user'
+          };
+          
+          const mockToken = 'mock-jwt-token-' + Date.now();
+          
+          localStorage.setItem('token', mockToken);
+          localStorage.setItem('user', JSON.stringify(mockUser));
+          
+          resolve({
+            token: mockToken,
+            user: mockUser,
+            message: 'Login exitoso (modo demo)'
+          });
+        }, 500); // Simular delay de red
+      });
+    }
+
+    // MODO REAL - Con backend
     try {
       const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
@@ -32,6 +60,33 @@ class AuthService {
 
   // Registro de usuario
   async register(userData) {
+    // MODO MOCK - Sin backend
+    if (USE_MOCK) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const mockUser = {
+            id: '123',
+            email: userData.email,
+            firstName: userData.firstName,
+            lastName: userData.lastName,
+            role: 'user'
+          };
+          
+          const mockToken = 'mock-jwt-token-' + Date.now();
+          
+          localStorage.setItem('token', mockToken);
+          localStorage.setItem('user', JSON.stringify(mockUser));
+          
+          resolve({
+            token: mockToken,
+            user: mockUser,
+            message: 'Registro exitoso (modo demo)'
+          });
+        }, 500);
+      });
+    }
+
+    // MODO REAL - Con backend
     try {
       const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
@@ -87,6 +142,14 @@ class AuthService {
 
   // Verificar token con el backend
   async verifyToken() {
+    // MODO MOCK - Sin backend
+    if (USE_MOCK) {
+      const token = this.getToken();
+      const user = this.getCurrentUser();
+      return !!(token && user); // Retorna true si hay token y usuario
+    }
+
+    // MODO REAL - Con backend
     try {
       const token = this.getToken();
       if (!token) return false;
@@ -112,6 +175,19 @@ class AuthService {
 
   // Recuperar contraseña
   async forgotPassword(email) {
+    // MODO MOCK - Sin backend
+    if (USE_MOCK) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            message: 'Se ha enviado un email con instrucciones (modo demo)',
+            success: true
+          });
+        }, 500);
+      });
+    }
+
+    // MODO REAL - Con backend
     try {
       const response = await fetch(`${API_URL}/auth/forgot-password`, {
         method: 'POST',
