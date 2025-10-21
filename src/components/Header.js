@@ -36,7 +36,7 @@ const Header = () => {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul className="nav-list">
               <li><a href="#inicio" className="nav-link">Inicio</a></li>
-              <li><a href="#calculadora" className="nav-link">Calculadora</a></li>
+              <li><a href="#calculadora-content" className="nav-link">Calculadora</a></li>
               <li><a href="#blog" className="nav-link">Blog</a></li>
               <li><a href="#transparencia" className="nav-link">Transparencia</a></li>
               <li><a href="#contacto" className="nav-link">Contacto</a></li>
@@ -53,7 +53,7 @@ const Header = () => {
             {isAuthenticated ? (
               <div className="user-menu">
                 <span className="user-greeting">Hola, {user?.firstName}</span>
-                <button onClick={handleLogout} className="btn btn-outline btn-logout">
+                <button onClick={handleLogout} className="btn btn-secondary btn-logout">
                   Cerrar Sesión
                 </button>
               </div>

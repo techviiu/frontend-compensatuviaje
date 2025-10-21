@@ -22,6 +22,10 @@ import Dashboard from './components/auth/Dashboard';
 import PrivateRoute from './components/auth/PrivateRoute';
 import PublicRoute from './components/auth/PublicRoute';
 
+// Components - Onboarding
+import CompanyOnboardingWizard from './components/onboarding/CompanyOnboardingWizard';
+import OnboardingStatus from './components/onboarding/OnboardingStatus';
+
 // Landing Page Component
 const LandingPage = () => (
   <>
@@ -76,6 +80,24 @@ function App() {
               element={
                 <PrivateRoute>
                   <Dashboard />
+                </PrivateRoute>
+              } 
+            />
+            
+            {/* Rutas privadas - Onboarding */}
+            <Route 
+              path="/onboarding/wizard" 
+              element={
+                <PrivateRoute>
+                  <CompanyOnboardingWizard />
+                </PrivateRoute>
+              } 
+            />
+            <Route 
+              path="/onboarding/status" 
+              element={
+                <PrivateRoute>
+                  <OnboardingStatus />
                 </PrivateRoute>
               } 
             />
