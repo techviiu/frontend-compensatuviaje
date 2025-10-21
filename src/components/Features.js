@@ -59,7 +59,7 @@ const Features = () => {
         </div>
 
         {/* Contenido principal con calculadora */}
-        <div className="features-content">
+        <div className="features-content" id="calculadora-content">
           <div className="content-left fade-in-up">
             <div className="calculator-badge">
               Compensa tu huella de carbono hoy
@@ -85,21 +85,6 @@ const Features = () => {
               <p className="calculator-description">
                 Calcula tu huella de carbono en segundos y descubre cómo compensar tu impacto ambiental
               </p>
-            </div>
-
-            <div className="features-list">
-              <div className="feature-item">
-                <span className="feature-icon">⚡</span>
-                <span>Cálculo rápido y preciso</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">🌍</span>
-                <span>Compensación inmediata</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">📊</span>
-                <span>Resultados detallados</span>
-              </div>
             </div>
           </div>
 

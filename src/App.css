@@ -12,6 +12,11 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 150px; /* Offset para el header fijo */
+}
+
 .App {
   min-height: 100vh;
 }
