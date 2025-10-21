@@ -82,8 +82,38 @@
   width: 100%;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-greeting {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-login {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
 .cta-button {
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 /* Mobile menu toggle */
@@ -111,6 +141,10 @@
     display: flex;
   }
 
+  .header-actions {
+    display: none;
+  }
+
   .nav {
     position: absolute;
     top: 100%;
@@ -136,9 +170,28 @@
     gap: 15px;
   }
 
+  .header-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+    gap: 10px;
+  }
+
+  .nav-open ~ .header-actions {
+    display: flex;
+  }
+
+  .user-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-login,
+  .btn-logout,
   .cta-button {
-    margin-left: 0;
-    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
     padding: 10px 20px;
     font-size: 14px;
   }
