@@ -389,8 +389,9 @@
   flex: 1;
 }
 
-.btn-primary,
-.btn-secondary {
+/* Botones específicos del wizard - no afectan botones globales */
+.wizard-container .btn-primary,
+.wizard-container .btn-secondary {
   padding: 0.875rem 2rem;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -403,28 +404,28 @@
   gap: 0.5rem;
 }
 
-.btn-primary {
+.wizard-container .btn-primary {
   background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
   color: white;
 }
 
-.btn-primary:hover:not(:disabled) {
+.wizard-container .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.3);
 }
 
-.btn-secondary {
+.wizard-container .btn-secondary {
   background: white;
   color: #374151;
   border: 1px solid #D1D5DB;
 }
 
-.btn-secondary:hover:not(:disabled) {
+.wizard-container .btn-secondary:hover:not(:disabled) {
   background: #F3F4F6;
 }
 
-.btn-primary:disabled,
-.btn-secondary:disabled {
+.wizard-container .btn-primary:disabled,
+.wizard-container .btn-secondary:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -501,8 +502,8 @@
     display: none;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .wizard-container .btn-primary,
+  .wizard-container .btn-secondary {
     width: 100%;
     justify-content: center;
   }
